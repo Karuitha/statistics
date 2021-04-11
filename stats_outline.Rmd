@@ -1,0 +1,133 @@
+---
+title: "Karatina University"
+author: "John Karuitha"
+date: "`r format(Sys.Date(), '%A, %B %d, %Y')`"
+output:
+  pdf_document: default
+  html_document: default
+  word_document: default
+params:
+  course: 'BTM 310: STATISTICS FOR RESEARCH MAIN'
+subtitle: School of Business
+always_allow_html: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## COURSE OUTLINE: `r params$course`  (March - July, 2021)
+
+## COURSE PURPOSE
+The program aims at equipping the student with skills in statistical analysis for making decisions. The course does so by allowing students to build an intuition instead of merely plugging numbers into a formula.
+
+## COURSE LEARNING OUTCOMES
+At the end of the course, the learner should be able to;
+
+1. Define statistics and data.
+2. Distinguish between the various data types.
+2. Master the Basics of R programming language for statistical analysis.
+2. Visualize data manually and using R.
+3. Summarize qualitative and quantitative data.
+4. Evaluate the strength of association between variables.
+5. Make inference using data.
+6. Build basic regression models.
+7. Create a statistical analysis report in R Markdown. 
+
+## COURSE CONTENT
+
+- Exploring and collecting data.
+    - Definitions and background.
+    - Statistics and Variation.
+    - Data: Data types and Sources.
+    - Surveys and Sampling.
+    - Introduction to R and R-Studio.
+    
+- Data Visualization.
+    - Displaying and describing categorical data.
+    - Displaying and describing quantitative data.
+    - Plotting data in base R.
+    - Introduction to the Tidyverse and GGPLOT plotting in R.
+    
+- Summarizing data.
+    - Summarizing categorical data.
+    - Summarizing quantitative data.
+        - Measures of center.
+        - Measures of spread.
+    - Summarizing data using R and the Tidyverse.
+    
+- Report Writing in Statistics
+    - Elements of a statistics based report.
+    - Introduction to latex, knitr, and R Markdown. 
+    - Writing a statistics based report in R Markdown. 
+
+- Randomness and probability. 
+    - Random phenomena and probability.
+    - The non-existent law of averages.
+    - Different types of probability.
+    - Probability rules.
+    - Joint probability and contingency tables.
+    - Conditional probability.
+    - Constructing contingency tables.
+    
+- Random variables and probability models.
+    - Expected value of a random variable.
+    - Standard deviation of a random variable.
+    - Properties of expected values and variances.
+    - Discrete probability distributions.
+    
+- The normal distribution.
+
+- Parametric Inference for decision making. 
+    - Testing hypotheses.
+    - Comparing two groups.
+    - Inference for counts: The Chi- Square tests.
+
+## MODE OF DELIVERY OF THE COURSE
+The course will be delivered using online lectures and discussions based on case studies and presentations by students.
+
+## INSTRUCTIONAL MATERIALS/ EQUIPMENT
+- I have made arrangements that technicians at the computers labs at the University install `R` and `R Studio` on the computers.  
+
+- For students who own personal computers, please install both `R` and `R studio` from the internet. Confirm whether your computer is 32-bit or 64 bit and install the appropriate version. Each software is free. 
+
+- `R` is availabe on this link <https://cran.r-project.org/bin/windows/base/>.
+
+- `R_Studio` is available on this link <https://rstudio.com/products/rstudio/download/>.
+
+- Both `R` and `R-Studio` are available for Mac, Linux, and Windows-based systems. Choose the appropriate version for your computer. 
+
+- For students who own tablets, you can neither install `R` nor `R Studio`. However, you can access the service online through `R Studio Cloud`. You have to be connected to the internet to access and use this service. Students with personal computers may also opt for this route. 
+
+## COURSE ASSESSMENT
+The course will be assessed using 3 continuous assessment tests, 1 project-based class assignment and 1 final exam, as shown in Table 1 below.
+
+```{r, echo = FALSE}
+library(tibble)
+library(kableExtra)
+tribble(~ Assessment, ~ Contribution,
+        "CAT 1: Multiple Choice", "5%",
+        "CAT 2: Multiple Choice", "5%",
+        "CAT 3: Sit in: Essays and Computations", "10%",
+        "CAT 4: Statistics based project report", "10%", 
+        "Final Examination", "70%", 
+        "TOTAL", "100%") %>% 
+  
+  kableExtra::kbl(., caption = "", 
+      
+  booktabs = TRUE) %>% 
+  
+  kable_paper(full_width = TRUE, font_size = 12)
+```
+
+
+## References
+
+De Veaux, R., & Velleman, F. (2012). Business statistics, Second Edition. New York: Addison Wesley.
+
+Navarro, D. (2015). Learning statistics with R. Lulu. com.
+
+I will share online resources especially on youtube in the course of the class. You may want to check out and subscribe to `Greg Martin` and `Hefin Rhys` excellent tutorials on R programming and statistics on YouTube. 
+
+
+

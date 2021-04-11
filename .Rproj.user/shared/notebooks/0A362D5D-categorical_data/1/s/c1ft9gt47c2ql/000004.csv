@@ -1,0 +1,5 @@
+"0","(age2 <- tibble(name = c(""Paul"", ""Catherine"", ""Oloo"", ""Etyang"", ""Nyaga"", ""Mwajuma""), "
+"0","              "
+"0","              age = c(""10-15"", ""16-20"", ""16-20"", ""16-20"", ""10-15"", ""21-25""),"
+"0","              "
+"0","              sex = c(""Male"", ""Female"", ""Male"", ""Male"", ""Male"", ""Female"")))"

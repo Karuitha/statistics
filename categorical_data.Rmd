@@ -1,0 +1,102 @@
+---
+title: "Data Summaries & Visualization"
+author: "John Karuitha"
+date: "3/18/2021"
+output:
+  beamer_presentation: default
+  ioslides_presentation: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+```
+
+## Describing and Exploring Categorical Data
+- As noted, categorical or qualitative data shows categories/ buckets/ classes. 
+
+- Examples; are height- Short, Medium, Tall; Age- 0 to 10 years, 11-15 years, 16-20 years, etc. 
+
+- Note that the examples above could be quantitative e.g age of three students- 10, 12, 16 years. 
+
+- You must distinguish qualitative and quantitative variables by looking at the context and presentation. 
+
+## How can we summarise categorical variables
+- We mostly use frequency tables or contigency tables
+
+- Lets have an example as follows for the ages of senior high school students 
+
+```{r}
+
+(age <- tibble(name = c("Paul", "Catherine", "Oloo", "Etyang", "Nyaga", "Mwajuma"), 
+              
+              age = c("10-15", "16-20", "16-20", "16-20", "10-15", "21-25")))
+```
+
+## Summarising categorical variables
+- Note that this data is categorical- students are presented in age groups and not real age. 
+
+- Let us summarise the age groups in tabular format. 
+
+```{r}
+table(age$age) %>% knitr::kable(col.names = c("Age", "Freq"))
+```
+- We can also do relative frequencies as percentage of the occurrence of each age group. 
+```{r}
+prop.table(table(age$age))
+```
+
+## Contigency tables
+
+- We typically summarise data using contingency tables. 
+
+- Let us have a a look at another example.
+
+```{r}
+(age2 <- tibble(name = c("Paul", "Catherine", "Oloo", "Etyang", "Nyaga", "Mwajuma"), 
+              
+              age = c("10-15", "16-20", "16-20", "16-20", "10-15", "21-25"),
+              
+              sex = c("Male", "Female", "Male", "Male", "Male", "Female")))
+
+```
+
+```{r}
+table(age2$sex)
+```
+
+- we can have a two way contingency table as follows.
+
+```{r}
+table(age2$age, age2$sex)
+```
+
+- Next we shall look at skewness and kurtosis.
+- Measures of spread- sd, variance, IQR, ....
+
+## Exercises
+
+- You are provided with the following categorical dataset for ages of ten random people.
+
+- Also remember how to write a character vector in R; Using quotes. 
+
+```{r, echo = TRUE}
+ages <- c("Toddler", "Teen", "Teen", "Adult", 
+          
+          "Adult", "Elder", "Adult", "Toddler", 
+          
+          "Teen", "Teen")
+
+ages
+```
+
+- Draw a frequency table
+- Draw a relative frequency table
+
+#############################################
+## Setting up a project/working directory in R
+
+
+### Intro to R-Markdown
