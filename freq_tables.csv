@@ -1,0 +1,27 @@
+,,,
+"I like the programs, ","I do not watch, ","I watch due to peer pressure, ",I don’t know
+"I watch due to peer pressure, ","I do not watch, ","I like the programs, ",I don’t know
+"I do not watch, ",I don’t know,"I watch due to peer pressure, ","I like the programs, "
+I don’t know,"I watch due to peer pressure, ","I watch due to peer pressure, ","I do not watch, "
+"I like the programs, ","I like the programs, ",I don’t know,"I like the programs, "
+"I like the programs, ","I watch due to peer pressure, ","I like the programs, ","I do not watch, "
+"I like the programs, ","I like the programs, ","I watch due to peer pressure, ","I like the programs, "
+"I watch due to peer pressure, ","I watch due to peer pressure, ","I do not watch, ",I don’t know
+"I like the programs, ","I like the programs, ","I like the programs, ","I watch due to peer pressure, "
+"I like the programs, ","I watch due to peer pressure, ","I do not watch, ","I watch due to peer pressure, "
+,,,
+,,,
+,,,
+,Response,Frequency,
+,"I like the programs, ",15,
+,"I watch due to peer pressure, ",12,
+,I don’t know,6,
+,"I do not watch, ",7,
+,,,
+,,,
+,,,
+,Response,Relative Frequency (%),
+,"I like the programs, ",37.5,
+,"I watch due to peer pressure, ",30,
+,I don’t know,15,
+,"I do not watch, ",17.5,
