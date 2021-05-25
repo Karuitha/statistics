@@ -1,0 +1,23 @@
+---
+title: "Visualizing Quantitative and Qualitative Variables"
+subtititle: "Quartiles and Outliers"
+author: "John Karuitha"
+date: "5/4/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Background
+
+- At times, you have a dataset that consists of both quantitative and Qualitative variables and want to summarise and visualize the datasets. 
+
+- A two way contigency table provides a useful way of summarising such datasets. 
+- A boxplot is one of the useful tools for visualizing such data. 
+
+- Let us look at an example;
+
+## The data
+

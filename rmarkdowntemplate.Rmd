@@ -1,0 +1,50 @@
+---
+title: "My Statistics Report"
+author: "John Karuitha"
+date: "5/6/2021"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# **Introduction**
+This is a first heading
+
+## ***Objective***
+This is a second heading
+
+### *Arithmetic Mean*
+This is a 3rd Heading
+
+### Advantages of arithmetic mean
+
+- Item 1
+- Item 2
+    - subitem 1 (use tab key once)
+    - subitem 2
+    
+### Disdvantages of arithmetic mean
+
+- Item 1
+- Item 2
+    - subitem 1 (use tab key once)
+    - subitem 2
+    
+## Geometric Mean
+Write something
+
+### Advantages of geometric mean
+
+1. One
+2. Two 
+7. Three
+
+### Disdvantages of geometric mean
+
+1. One
+2. Two 
+7. Three
