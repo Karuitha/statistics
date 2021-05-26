@@ -303,7 +303,89 @@ This student scored 1.333 standard deviations below the average of zero. Z score
 
 ### Computing the Correlation Coefficient
 
+To compute correlation coefficient, do as follows. 
 
+1. Compute the mean ($\mu$) of X and Y. 
+2. Compute the standard deviation ($\sigma$) of X and Y. 
+3. Standardize X and Y. That is, compute the Z-scores. Remember, 
+
+      $Z_x = \frac{X - \mu}{\sigma}$
+      
+4. Compute the correlation coefficient as follows;
+
+      $r = \frac{\sum Z_x Z_y}{n-1}$
+
+### Example
+
+Compute the correlation coefficient between the two variables given below. 
+
+```{r}
+correlation_data <- data.frame(x = c(1, 3, 4, 7, 12), 
+
+y = c(20, 17, 12, 13, 10))
+
+correlation_data %>% 
+  
+  knitr::kable(caption = "Compute the Correlation Coeffcient", booktabs = TRUE) %>% 
+  
+  kableExtra::kable_styling(full_width = FALSE, bootstrap_options = "striped")
+```
+
+- Compute the mean of X and Y. Did you get `r mean(correlation_data$x)` and `r mean(correlation_data$y)`, respectively. 
+
+- Compute the standard deviation of X and Y. 
+
+```{r}
+correlation_data2 <- correlation_data %>% 
+  
+  mutate(xlessmeanx = x - mean(x), ylessmeany = y - mean(y), 
+         
+         xlessmeanxsquared = xlessmeanx^2, ylessmeanysquared = ylessmeany^2)
+
+correlation_data2 %>% 
+  
+  knitr::kable(caption = "Compute the Correlation Coeffcient", booktabs = TRUE) %>% 
+  
+  kableExtra::kable_styling(full_width = FALSE, bootstrap_options = "striped")
+```
+
+The standard deviation for x will be `r sqrt((sum(correlation_data2$xlessmeanxsquared)) / (nrow(correlation_data2) -1))`. 
+
+The standard deviation for x will be `r sqrt((sum(correlation_data2$ylessmeanysquared)) / (nrow(correlation_data2) -1))`. 
+
+We can confirm this in `R` using the following code. 
+
+```{r}
+sd(correlation_data$x)
+
+sd(correlation_data$y)
+```
+
+We now standardize both x and y. Note that we have already computed $x - \mu$ and $y - \mu$. 
+
+```{r}
+correlation_data3 <- correlation_data2 %>% 
+  
+  mutate(Zx = xlessmeanx/sd(x), Zy = ylessmeany/sd(y), 
+         
+         ZxZy = Zx * Zy)
+
+correlation_data3 %>% 
+  
+  knitr::kable(caption = "Compute the Correlation Coeffcient", booktabs = TRUE) %>% 
+  
+  kableExtra::kable_styling(full_width = FALSE, bootstrap_options = "striped")
+```
+
+Now the correlation coefficient is $r = \frac{\sum Z_x Z_y}{n-1}$. So we add up $ZxZy$ and divide it with $n -1$. 
+
+Hence, $r = \frac{sum of ZxZy}{n -1}$ = `r sum(correlation_data3$ZxZy)/(nrow(correlation_data3)-1)`. 
+
+We can confirm this in `R` as follows. 
+
+```{r}
+cor(correlation_data$x, correlation_data$y)
+```
 
 
 ### Interpreting Correlation Coefficients
@@ -412,3 +494,9 @@ Some uses of Correlations include;
   - Predictive validity.
 
 ## **References**
+
+
+
+
+
+
