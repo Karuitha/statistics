@@ -1,0 +1,130 @@
+---
+title: 'BHR 210: Statistics CAT 1'
+author: "John Karuitha"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+
+library(tidyverse)
+library(rvest)
+library(kableExtra)
+```
+
+
+## Question One
+
+Describe the meaning of the following terms. 
+
+ - Statistics. (2 mks)
+ - Parameters. (2 mks)
+ - Stationarity. (2 mks)
+ - 
+ 
+## Question Two
+
+You are provided with the following data relating to the population of Kenya between 1963 and 2018. 
+
+```{r}
+url_kenya <- "https://en.wikipedia.org/wiki/Kenya"
+
+read_html(url_kenya) %>% 
+  
+  html_nodes("table") %>% 
+  
+  html_table() %>% 
+  
+  .[[6]] %>% 
+  
+  set_names(c("Year", "Population", "X", "Y")) %>% 
+  
+  select(-X, -Y) %>% 
+  
+  filter(Year != "Year") %>% 
+  
+  kbl(., booktabs = TRUE, caption = "Trends in Population, Kenya") %>% 
+  
+  kable_classic(full_width = FALSE, latex_options = "hold_position") %>% 
+  
+  footnote(general = "Source: Wikipedia, 2022")
+
+```
+
+Required:
+1. Describe the types of each of the variables, Year and Population. 
+Example: Year is categorical and ordinal.  (2 mks)
+
+2. Sketch an appropriate plot to represent the data. (5 mks)
+
+3. Is the data above times series, cross-sectional or panel (longitudinal)? Explain your answer. (2 mks)
+
+
+## Question 3
+
+You are provided with the following data on continents. 
+
+```{r}
+url_continent <- "https://en.wikipedia.org/wiki/Continent"
+
+read_html(url_continent) %>% 
+  
+  html_nodes("table") %>% 
+  
+  html_table() %>% 
+  
+  .[[3]] %>% 
+  
+  set_names(c("continent", "area_sq_km", "area_sq_mile", "perc",
+              
+              "population_billions", "perc_pop")) %>% 
+  
+  select(continent, area_sq_km, population_billions) %>% 
+  
+  filter(continent != "Continent or Region") %>% 
+  
+  kbl(., booktabs = TRUE, caption = "Areas and Populations of World's Continents in 2018") %>% 
+  
+  kable_classic(full_width = FALSE, latex_options = "hold_position") %>% 
+  
+  footnote(general = "Source: Wikipedia, 2022")
+```
+
+Required:
+1. Describe the types of each of the variables. 
+Example: Year is categorical and ordinal.  (5 mks)
+
+2. Sketch an appropriate plot to represent the data, as follows:
+
+  - Continent versus area (3 mks).
+  - Continent versus population (3 mks).
+  - Area versus population (3 marks). 
+  
+NB: For simplicity, write your figures in tens of millions. 
+For example, one million, 1,000,000 becomes 0.1.
+For example, one billion, 1,000,000,000 becomes 10.
+This means you write the figures given in full then divide by 10 million. 
+
+3. Is the data above times series, cross-sectional or panel (longitudinal)? Explain your answer. (2 mks)
+
+
+## Question 4
+
+Visit the site <https://en.wikipedia.org/wiki/Africa>. Collect the population data for each country, ensuring to label the country region (example, North Africa, East Africa). 
+
+1. For each region (East Africa, West Africa, etc), compute the following values.
+
+- Median population. (1 mk)
+- Minimum population. (1 mk)
+- Maximum population. (1 mk)
+- First quartile. (2 mks)
+- Third Quartile. (2 mks)
+
+NB: Remember to order your data in ascending order when computing the median and the quartiles. 
+
+2. Draw side by side box plots with region on the x-axis (18 mks). 
+
+

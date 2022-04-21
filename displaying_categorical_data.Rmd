@@ -183,7 +183,7 @@ happy_data %>%
   labs(title = "Happiness in Kenya")
 ```
 
-## Visualizing categorical data: Exercise solutions- pie chart
+## Visualizing categorical data: Exercise solutions- Bar chart
 ```{r}
 happy_data %>% 
   

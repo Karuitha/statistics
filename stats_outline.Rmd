@@ -7,7 +7,7 @@ output:
   html_document: default
   word_document: default
 params:
-  course: 'BTM 310: STATISTICS FOR RESEARCH MAIN'
+  course: 'BTM 310/ BHR 210: STATISTICS FOR RESEARCH'
 subtitle: School of Business
 always_allow_html: true
 ---
@@ -16,7 +16,7 @@ always_allow_html: true
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## COURSE OUTLINE: `r params$course`  (March - July, 2021)
+## COURSE OUTLINE: `r params$course`  
 
 ## COURSE PURPOSE
 The program aims at equipping the student with skills in statistical analysis for making decisions. The course does so by allowing students to build an intuition instead of merely plugging numbers into a formula.
@@ -43,9 +43,16 @@ At the end of the course, the learner should be able to;
     - Surveys and Sampling.
     - Introduction to R and R-Studio.
     
+- Report Writing in Statistics
+    - Elements of a statistics based report.
+    - Introduction to latex, knitr, and R Markdown. 
+    - Writing a statistics based report in R Markdown. 
+
 - Data Visualization.
-    - Displaying and describing categorical data.
-    - Displaying and describing quantitative data.
+    - Displaying one categorical variable.
+    - Displaying one quantitative variable.
+    - Visualizing two quantitative variables.
+    - Visualizing a quantitative variable and a categorical variable.
     - Plotting data in base R.
     - Introduction to the Tidyverse and GGPLOT plotting in R.
     
@@ -56,10 +63,14 @@ At the end of the course, the learner should be able to;
         - Measures of spread.
     - Summarizing data using R and the Tidyverse.
     
-- Report Writing in Statistics
-    - Elements of a statistics based report.
-    - Introduction to latex, knitr, and R Markdown. 
-    - Writing a statistics based report in R Markdown. 
+- Correlation and Regression.
+
+  - Correlation.
+  - Interpreting correlation.
+  - Correlation versus causation.
+  - The Anscombe Quartet.
+  - Regression.
+  - Interpreting regression coefficients.
 
 - Randomness and probability. 
     - Random phenomena and probability.
@@ -70,17 +81,12 @@ At the end of the course, the learner should be able to;
     - Conditional probability.
     - Constructing contingency tables.
     
-- Random variables and probability models.
-    - Expected value of a random variable.
-    - Standard deviation of a random variable.
-    - Properties of expected values and variances.
-    - Discrete probability distributions.
-    
 - The normal distribution.
 
 - Parametric Inference for decision making. 
     - Testing hypotheses.
     - Comparing two groups.
+    - Comparing more than two groupd: ANOVA
     - Inference for counts: The Chi- Square tests.
 
 ## MODE OF DELIVERY OF THE COURSE

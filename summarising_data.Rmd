@@ -9,6 +9,8 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+
+library(tidyverse)
 ```
 
 ## Summarizing data
@@ -158,4 +160,34 @@ median(age)
 - Note the way the arithmetic mean changes by a large amount while the median is not affected. 
 
 - When you have data that has extreme values, it is better to use the median in place of arithmetic mean. 
+
+## The Mode
+
+The mode is simply the most frequenty occurring element of a variable. 
+
+As an example, consider the following dataset. 
+
+```{r}
+tibble(x = c(1, 2, 2, 4, 3, 2)) %>% knitr::kable()
+```
+
+In this case, 2 occurs 3 times. Hence 2 is the mode. In this case, the variable has only one mode. such a distribution is unimodal. It is possible for a variables to have two or more modes. A variable with two modes is bimodal. A distribution with two or more modes is multimodal. Hence a bimodal variable is also multimodal. 
+
+Here is an example of a bimodal variable.
+
+```{r}
+tibble(x = c(1, 2, 3, 1, 3)) %>% knitr::kable()
+```
+
+Here is a multimodal variable with three modes. 
+
+```{r}
+tibble(x = c(1, 2, 1, 3, 3, 4, 5, 2, 6)) %>% knitr::kable()
+```
+
+Here you can see the three modes 1, 2, and 3. 
+
+## Quartiles
+
+Quartiles are the three points in a data set that divide the data into 4 equal parts. The term quartile denotes `quarter` (1/4). Note that as the second quartile (2/4), the median is also a quartile. Hence we have 3 quartiles; 1st Quartile (1/4), second quartile (2/4) also called the median, and the third quartile (3/4). You must arrange the data in ascending or descending order to compute the quartiles including the median. Refer to our class discussion. 
 
