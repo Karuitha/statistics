@@ -1,27 +1,29 @@
 ---
-title: "Karatina University"
-author: "John Karuitha"
+title: "**COURSE OUTLINE**"
+author: "Instructor: John Karuitha"
 date: "`r format(Sys.Date(), '%A, %B %d, %Y')`"
 output:
   pdf_document: default
   html_document: default
   word_document: default
-params:
-  course: 'BTM 310/ BHR 210: STATISTICS FOR RESEARCH'
-subtitle: School of Business
 always_allow_html: true
+header-includes:
+  - \usepackage{titling}
+  - \pretitle{\begin{center}
+    \includegraphics[width=2in,height=2in]{karu2.png}\LARGE\\}
+  - \posttitle{\end{center}}
+subtitle: "**PPM 311: Introduction to Statistics**"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## COURSE OUTLINE: `r params$course`  
 
-## COURSE PURPOSE
+# **COURSE PURPOSE**
 The program aims at equipping the student with skills in statistical analysis for making decisions. The course does so by allowing students to build an intuition instead of merely plugging numbers into a formula.
 
-## COURSE LEARNING OUTCOMES
+# **COURSE LEARNING OUTCOMES**
 At the end of the course, the learner should be able to;
 
 1. Define statistics and data.
@@ -34,7 +36,7 @@ At the end of the course, the learner should be able to;
 6. Build basic regression models.
 7. Create a statistical analysis report in R Markdown. 
 
-## COURSE CONTENT
+# **COURSE CONTENT**
 
 - Exploring and collecting data.
     - Definitions and background.
@@ -89,10 +91,10 @@ At the end of the course, the learner should be able to;
     - Comparing more than two groupd: ANOVA
     - Inference for counts: The Chi- Square tests.
 
-## MODE OF DELIVERY OF THE COURSE
+# **MODE OF DELIVERY OF THE COURSE**
 The course will be delivered using online lectures and discussions based on case studies and presentations by students.
 
-## INSTRUCTIONAL MATERIALS/ EQUIPMENT
+# **INSTRUCTIONAL MATERIALS/ EQUIPMENT**
 - I have made arrangements that technicians at the computers labs at the University install `R` and `R Studio` on the computers.  
 
 - For students who own personal computers, please install both `R` and `R studio` from the internet. Confirm whether your computer is 32-bit or 64 bit and install the appropriate version. Each software is free. 
@@ -105,7 +107,7 @@ The course will be delivered using online lectures and discussions based on case
 
 - For students who own tablets, you can neither install `R` nor `R Studio`. However, you can access the service online through `R Studio Cloud`. You have to be connected to the internet to access and use this service. Students with personal computers may also opt for this route. 
 
-## COURSE ASSESSMENT
+# **COURSE ASSESSMENT**
 The course will be assessed using 3 continuous assessment tests, 1 project-based class assignment and 1 final exam, as shown in Table 1 below.
 
 ```{r, echo = FALSE}
@@ -127,7 +129,7 @@ tribble(~ Assessment, ~ Contribution,
 ```
 
 
-## References
+# **REFERENCES** {.unnumbered}
 
 De Veaux, R., & Velleman, F. (2012). Business statistics, Second Edition. New York: Addison Wesley.
 

@@ -1,10 +1,11 @@
 ---
 title: "Introduction to Statistics"
 author: "John Karuitha"
-date: "3/17/2021"
+date: "`r Sys.Date()`"
 output:
-  beamer_presentation: default
   ioslides_presentation: default
+  slidy_presentation: default
+  beamer_presentation: default
 ---
 
 ```{r setup, include=FALSE}
@@ -37,7 +38,7 @@ Background: In the mainstream media and social media, we are constantly bombarde
 
 - Usually, we have no access to the entire population and rely on sample data to draw inferences about the population.
 
-- Example of inferential statistics is when you take a sample of 2nd year BHR students at Karatina University, take their height and weight, and use this data as a basis to infer the height and weight of ALL students at Karatina University. 
+- Example of inferential statistics is when you take a sample of 2nd year BPM students at Karatina University, take their height and weight, and use this data as a basis to infer the height and weight of ALL students at Karatina University. 
 
 ## Defining data;
 
@@ -53,7 +54,7 @@ Background: In the mainstream media and social media, we are constantly bombarde
 
 - Big data are data so vast they cannot be handled using the traditional methods of storage (e.g. excel spreadsheet) and analysis (using SPSS) are inadequate.
 
-- Big data connotes data that accumulates very fast (the velocity problem), from many sources (the variety problem), and is large in quantity (the volume problem) that it is challenging to tell whether or not it is authentic (the veracity problem). 
+- Big data connotes data that accumulates very fast (the velocity problem), from many sources and in different varieties- text, video, pictures, sound (the variety problem), and is large in quantity (the volume problem) that it is challenging to tell whether or not it is authentic (the veracity problem- think of the modern prevalence of fake news on social media). 
 
 - Think of a dataset with 150 billion rows of data and 1000 columns of variables. wheredo you start analysing that? 
 
@@ -103,6 +104,10 @@ Usually data are stored in data tables.
 ```{r, echo = FALSE}
 library(tibble)
 library(kableExtra)
+library(janitor)
+library(tidyverse)
+library(rvest)
+library(gt)
 tribble(~ Name, ~ Age, ~ Height, ~ Weight, ~ County, ~ Date_of_data,
         
         "Atieno", "32", "180", "90", "Mombasa", "Jan 1, 2021", 
@@ -233,6 +238,26 @@ data.frame(Year = 2010:2020, Salary = seq(10000, 20000, length.out = 11), Weight
 - Panel data has both a time series element and a cross-sectional element. 
 
 - Research on this. 
+
+## Exercise
+
+I dentify the data types in the following set of data.
+
+```{r}
+read_html('https://www.worldometers.info/geography/7-continents/') %>% 
+  html_nodes('table') %>% 
+  html_table() %>% 
+  .[[1]] %>% 
+  clean_names() %>% 
+  mutate(across(
+    .cols = -continent & where(is.character),
+    .fns = ~parse_number(.x)
+  )) %>% 
+  kableExtra::kbl(caption = "World Population by Continent",
+                  booktabs = TRUE) %>% 
+  kable_classic_2(font_size = 8, 
+                  full_width = FALSE)
+```
 
 
 ## Exercise 

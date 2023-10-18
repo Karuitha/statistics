@@ -20,9 +20,11 @@ subtititle: Quartiles and Outliers
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
-if(!require(c("dslabs", "tidyverse", "kableExtra", "knitr", "skimr", "gghalves"))){
-  install.packages(c("dslabs", "tidyverse", "kableExtra", "knitr", "skimr", "gghalves"))
+if(!require(pacman)){
+  install.packages("pacman")
 }
+
+p_load(dslabs, tidyverse, kableExtra, knitr, skimr, gghalves)
 
 options(digits =4)
 ```
@@ -91,7 +93,9 @@ heights %>%
   
   summary()
 ```
+
 ## The Quartiles
+
 We have already discussed the mean and the median. The minimum (min) is the smallest number in a range of quantitative variables. The Maximum (max) is the opposite of the minimum. The range is the difference between the minimum and the maximum and is a common measure of spread. The range is however affected a lot by extreme values. What we have not looked at are the quartiles. The median divides the data into two parts, and is usually a single figure. Quartiles, on the other hand divide the dataset into 4 equal parts. Unlike the median which is just one value, there are THREE values for quartiles. 
 
 - Quartile 1 (or 1st Quartile): 

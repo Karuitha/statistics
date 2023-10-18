@@ -1,7 +1,7 @@
 ---
 title: "Displaying and Describing Categorical Data"
 author: "John Karuitha"
-date: "4/22/2021"
+date: "`r format(Sys.Date(), '%A, %B %d, %Y')`"
 output: beamer_presentation
 ---
 
@@ -51,9 +51,12 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 ![Relative frequency tables](relative_freq_table.png)
 
 ## Visualizing categorical data 
+
 - Two commonly used visualization tools for categorical data are
+
 	- Pie Charts.
 	- Bar graphs
+	
 - Pie charts are less favored given that they use area to represent data.
 
 - The human mind finds it hard to interpret areas (angles).
@@ -61,6 +64,7 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 - The bar chart is easier for the human mind because its a matter of comparing heights. It is linear.
 
 ##  Visualizing categorical data: The area principle
+
 - The best data displays observe a fundamental principle of graphing data called the area principle.
 
 - - The area principle states that the area occupied by a part of the graph should correspond to the magnitude of the value it represents.
@@ -105,7 +109,7 @@ freq_tables %>%
 
 - When you have many categories, interpreting the pie chart gets even harder. 
 
-- For bar charts its better to arrange the bars in asceding or descending order of height. See examples. 
+- For bar charts its better to arrange the bars in ascending or descending order of height. See examples. 
 
 ## Visualizing categorical data: The bar graph
 
